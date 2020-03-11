@@ -1,10 +1,24 @@
-/*#region RESET (Do not touch) */
+/*#region RESET (Do not touch */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+/*#endregion /RESET (Do not touch) */
 
+/*#region Root variables */
+:root {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --transition-speed: 600ms;
+}
+/*#endregion /Root variables */
+
+/*#region Body and Main styling */
 body {
   color: black;
   background-color: white;
@@ -23,34 +37,19 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background: #6649b8;
 }
-/*#endregion /RESET (Do not touch) */
 
-/*#region Root variables */
-:root {
-  font-size: 16px;
-  font-family: "Open Sans", sans-serif;
-  --text-primary: #b6b6b6;
-  --text-secondary: #ececec;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
-  --transition-speed: 600ms;
-}
-/*#endregion /Root variables */
-
-/*#region Main styling */
 main {
   margin-left: 5rem;
-  padding: 1rem;
 }
-/*#endregion /Main styling */
+/*#endregion /Body and Main styling */
 
 /*#region Navigation styling */
 .navbar {
-  width: 5rem;
-  height: 100vh;
   position: fixed;
   background-color: var(--bg-primary);
-  transition: 200ms ease-in;
+  transition: width 600ms ease;
+  overflow: none;
+  z-index: 9999;
 }
 
 .navbar-nav {
@@ -86,23 +85,17 @@ main {
 .link-text {
   display: none;
   margin-left: 1rem;
+  transition: var(--transition-speed);
 }
 
 .nav-link i {
+  width: 2rem;
   min-width: 2rem;
   margin: 0 1.5rem;
 }
 
-.navbar:hover {
-  width: 16rem;
-}
-
-.navbar:hover .link-text {
-  display: block;
-}
-
 .fas {
-  color: #ff7eee;
+  color: #fff;
   transition: var(--transition-speed);
 }
 
@@ -114,21 +107,169 @@ main {
   color: var(--text-secondary);
   background: var(--bg-secondary);
   font-size: 1.5rem;
-  text-transform: uppercase;
   letter-spacing: 0.3ch;
+  width: 100%;
 }
 
-.logo img {
+.logo i {
   transform: rotate(0deg);
-  transition: transform var(--transition-speed);
+  transition: var(--transition-speed);
 }
 
-.navbar:hover .logo img {
+.logo-text {
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: var(--transition-speed);
+}
+
+.navbar:hover .logo i {
   transform: rotate(-180deg);
 }
-
-/* Use if adding 'settings' or 'dark mode / light mode' toggler */
-/* .nav-item:last-child {
-  margin-top: auto;
-} */
 /*#endregion /Navigation styling */
+
+/*#region Navigation media queries */
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+  }
+
+  .navbar:hover .logo i {
+    margin-left: 11rem;
+  }
+
+  .navbar:hover .logo-text {
+    left: 0px;
+  }
+}
+/*#endregion /Navigation media queries */
+
+/*#region Main content Grid */
+.main-grid {
+  height: 100vh;
+  display: grid;
+  gap: 1rem;
+
+  /* Explicit grid */
+  grid-template-areas:
+    "title"
+    "search"
+    "search-results"
+    "footer";
+  /* 4 rows that take up: 30%, 20%, 40% and 10% */
+  grid-template-rows: repeat(4, 30% 20% 40% 10%);
+  /* First column is 240px wide, both middle columns automatically fit the view port, and the last column has a width of 240px */
+  grid-template-columns: auto;
+  --stagger-delay: 100ms;
+}
+
+@keyframes areaEntrance {
+  from {
+    opacity: 0;
+    transform: scale (0.3);
+    filter: hue-rotate(180deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale (1);
+    filter: hue-rotate(0deg);
+  }
+}
+
+.grid-area {
+  animation: areaEntrance 700ms ease-out;
+  animation-fill-mode: backwards;
+
+  /* Aligns content to center */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Grid-area details */
+  color: black;
+  height: 100%;
+  width: 100%;
+  transition: all 500ms;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.grid-area:nth-child(1) {
+  grid-area: title;
+  animation-delay: calc(1 * var(--stagger-delay));
+}
+
+.grid-area:nth-child(2) {
+  grid-area: search;
+  animation-delay: calc(2 * var(--stagger-delay));
+}
+.grid-area:nth-child(3) {
+  grid-area: search-results;
+  animation-delay: calc(3 * var(--stagger-delay));
+}
+
+/* On small screens footer is hidden */
+@media only screen and (max-width: 600px) {
+  .grid-area:last-child {
+    display: none;
+    grid-area: footer;
+    animation-delay: calc(4 * var(--stagger-delay));
+  }
+}
+/*#endregion /Main content Grid */
+
+/*#region Main content */
+.title {
+}
+
+.search {
+}
+
+.search-results {
+}
+
+.footer {
+  background-color: black;
+  color: white;
+}
+/*#endregion /Main content */
