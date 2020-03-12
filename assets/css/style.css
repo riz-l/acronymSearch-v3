@@ -38,6 +38,10 @@
 .text-center {
   text-align: center;
 }
+
+.container {
+  padding: 1rem;
+}
 /*#endregion /Global classes */
 
 /*#region Body and Main styling */
@@ -221,7 +225,7 @@ main {
     "search-results"
     "footer";
   /* 4 rows that take up: 30%, 20%, 40% and 10% */
-  grid-template-rows: repeat(4, 30% 20% 40% 10%);
+  grid-template-rows: repeat(4, 30% 10% 50% 10%);
   /* One column that fills the viewport */
   grid-template-columns: auto;
   --stagger-delay: 100ms;
@@ -272,6 +276,7 @@ main {
   grid-area: search;
   animation-delay: calc(2 * var(--stagger-delay));
 }
+
 .grid-area:nth-child(3) {
   grid-area: search-results;
   animation-delay: calc(3 * var(--stagger-delay));
@@ -286,3 +291,52 @@ main {
   }
 }
 /*#endregion /Main content Grid */
+
+/*#region Title */
+.main-title {
+  font-size: 4vw;
+}
+
+.main-lead {
+  font-size: 1.5vw;
+}
+
+@media only screen and (max-width: 866px) {
+  .main-title {
+    font-size: 5vw;
+  }
+
+  .main-lead {
+    font-size: 2vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-title {
+    font-size: 7vw;
+  }
+
+  .main-lead {
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (max-width: 318px) {
+  .main-title {
+    font-size: 6vw;
+  }
+
+  .main-lead {
+    font-size: 3.5vw;
+  }
+}
+/*#endregion /Title */
+
+/*#region Footer */
+.footer {
+  background: var(--bg-secondary);
+  background: #141418;
+  color: var(--text-secondary);
+  color: #ececec;
+}
+/*#endregion /Footer */
