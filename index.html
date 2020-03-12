@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!--#region Head -->
+  <!--#region Head-->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Text.css -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Styles.css -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- Bootstrap.css -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
     <!-- Poppins (Google Fonts) -->
     <link
       href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
@@ -14,44 +21,43 @@
     <title>Acronym Search</title>
   </head>
   <!--#endregion /Head -->
-
   <body>
     <!--#region Navigation bar-->
-    <nav class="navbar">
-      <ul class="navbar-nav">
+    <nav class="navbar-tdi">
+      <ul class="navbar-nav-tdi">
         <!-- Logo -->
-        <li class="logo">
-          <a href="index.html" class="nav-link">
-            <span class="link-text logo-text">TDI</span>
+        <li class="logo-tdi">
+          <a href="index.html" class="nav-link-tdi">
+            <span class="link-text-tdi logo-text-tdi">TDI</span>
             <i class="fas fa-angle-double-right"></i>
           </a>
         </li>
         <!-- Home -->
-        <li class="nav-item">
-          <a href="index.html" class="nav-link">
+        <li class="nav-item-tdi">
+          <a href="index.html" class="nav-link-tdi">
             <i class="fas fa-home"></i>
-            <span class="link-text">Home</span>
+            <span class="link-text-tdi">Home</span>
           </a>
         </li>
         <!-- About -->
-        <li class="nav-item">
-          <a href="pages/about.html" class="nav-link">
+        <li class="nav-item-tdi">
+          <a href="pages/about.html" class="nav-link-tdi">
             <i class="fas fa-info-circle"></i>
-            <span class="link-text">About</span>
+            <span class="link-text-tdi">About</span>
           </a>
         </li>
         <!-- Contact -->
-        <li class="nav-item">
-          <a href="pages/contact.html" class="nav-link">
+        <li class="nav-item-tdi">
+          <a href="pages/contact.html" class="nav-link-tdi">
             <i class="fas fa-envelope"></i>
-            <span class="link-text">Contact</span>
+            <span class="link-text-tdi">Contact</span>
           </a>
         </li>
         <!-- Sponsors -->
-        <li class="nav-item">
-          <a href="pages/sponsors.html" class="nav-link">
+        <li class="nav-item-tdi">
+          <a href="pages/sponsors.html" class="nav-link-tdi">
             <i class="fas fa-asterisk"></i>
-            <span class="link-text">Sponsors</span>
+            <span class="link-text-tdi">Sponsors</span>
           </a>
         </li>
       </ul>
@@ -60,65 +66,66 @@
 
     <!--#region Main content -->
     <main>
-      <section class="main-grid">
-        <!--#region Title -->
-        <div class="grid-area">
-          <div class="container">
-            <h1 class="main-title text-center">Acronym Search</h1>
-            <p class="main-lead text-center">
-              Please use the searchbar below to look for acronyms commonly used
-              throughout the Defence industry.
+      <!--#region Title -->
+      <div class="jumbotron">
+        <div class="container">
+          <div class="title-space">
+            <h1 class="display-3">Acronym Search</h1>
+            <p>
+              Please use the searchbar below to look for acronyms and
+              definitions commonly used throughout the Defence industry
             </p>
           </div>
         </div>
-        <!--#endregion /Title -->
+      </div>
+      <!--#endregion /Title -->
 
-        <!--#region Search Bar -->
-        <div class="grid-area">
-          <p>Search Bar</p>
+      <!--#region Search Bar -->
+      <div class="container">
+        <div class="searchbar-space pt-4">
+          <input class="form-control" id="acronymSearchTable" type="text" />
         </div>
-        <!--#endregion /Search Bar -->
+      </div>
+      <!--#endregion /Search Bar-->
 
-        <!--#region Search Results -->
-        <div class="grid-area">
-          <!--#region Acronym/Definition Card -->
-          <div class="card-container">
-            <div class="card-image">
-              <img
-                src="assets/img/tdi-logo.png"
-                alt="Team Defence Information Logo"
-              />
-            </div>
-            <div class="column">
-              <div>
-                <p class="card-acronym" id="result-acronym">MOD</p>
-              </div>
-              <div>
-                <p card="card-definition" id="result-definition">
-                  Ministry of Defence
-                </p>
-              </div>
-            </div>
-          </div>
-          <!--#endregion /Acronym/Definition Card -->
-        </div>
-        <!--#endregion /Search Results -->
+      <!--#region Search Results -->
+      <div class="container">
+        <div class="searchresults-space"></div>
+      </div>
+      <!--#endregion /Search Results-->
 
-        <!--#region Footer -->
-        <div class="grid-area footer">
-          <p>&copy; 2020 Team Defence Information</p>
+      <!--#region Footer -->
+      <footer class="container">
+        <div class="footer-space">
+          <p class="text-muted">&copy; 2020 Team Defence Information</p>
         </div>
-        <!--#endregion /Footer -->
-      </section>
+      </footer>
+      <!--#endregion /Footer -->
     </main>
     <!--#endregion /Main content-->
 
     <!--#region Scripts -->
-    <!-- Font Awesome -->
+    <!-- Font Awesome.js-->
     <script
       src="https://kit.fontawesome.com/78b1d29e85.js"
       crossorigin="anonymous"
     ></script>
-    <!--#endregion /Scripts -->
+    <!-- Bootstrap.js -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <!--#endregion /Scripts-->
   </body>
 </html>
