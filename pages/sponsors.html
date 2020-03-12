@@ -1,57 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!--#region Head -->
+  <!--#region Head-->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Text.css -->
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <!-- Styles.css -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <!-- Bootstrap.css -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
     <!-- Poppins (Google Fonts) -->
     <link
       href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
       rel="stylesheet"
     />
-    <title>Acronym Search</title>
+    <title>Sponsors - Acronym Search</title>
   </head>
   <!--#endregion /Head -->
-
   <body>
     <!--#region Navigation bar-->
-    <nav class="navbar">
-      <ul class="navbar-nav">
+    <nav class="navbar-tdi">
+      <ul class="navbar-nav-tdi">
         <!-- Logo -->
-        <li class="logo">
-          <a href="../index.html" class="nav-link">
-            <span class="link-text logo-text">TDI</span>
+        <li class="logo-tdi">
+          <a href="../index.html" class="nav-link-tdi">
+            <span class="link-text-tdi logo-text-tdi">TDI</span>
             <i class="fas fa-angle-double-right"></i>
           </a>
         </li>
         <!-- Home -->
-        <li class="nav-item">
-          <a href="../index.html" class="nav-link">
+        <li class="nav-item-tdi">
+          <a href="../index.html" class="nav-link-tdi">
             <i class="fas fa-home"></i>
-            <span class="link-text">Home</span>
+            <span class="link-text-tdi">Home</span>
           </a>
         </li>
         <!-- About -->
-        <li class="nav-item">
-          <a href="about.html" class="nav-link">
+        <li class="nav-item-tdi">
+          <a href="about.html" class="nav-link-tdi">
             <i class="fas fa-info-circle"></i>
-            <span class="link-text">About</span>
+            <span class="link-text-tdi">About</span>
           </a>
         </li>
         <!-- Contact -->
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">
+        <li class="nav-item-tdi">
+          <a href="contact.html" class="nav-link-tdi">
             <i class="fas fa-envelope"></i>
-            <span class="link-text">Contact</span>
+            <span class="link-text-tdi">Contact</span>
           </a>
         </li>
         <!-- Sponsors -->
-        <li class="nav-item">
-          <a href="sponsors.html" class="nav-link">
+        <li class="nav-item-tdi">
+          <a href="sponsors.html" class="nav-link-tdi">
             <i class="fas fa-asterisk"></i>
-            <span class="link-text">Sponsors</span>
+            <span class="link-text-tdi">Sponsors</span>
           </a>
         </li>
       </ul>
@@ -60,16 +66,112 @@
 
     <!--#region Main content -->
     <main>
-      <h1>Sponsors</h1>
+      <!--#region Sponsors title -->
+      <div class="jumbotron">
+        <div class="container">
+          <div class="title-space">
+            <h1 class="display-3">Sponsors</h1>
+            <p class="sub-text">
+              The Acronym Search wouldn't be possible without our sponsors. Find
+              out more about them below
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--#endregion /Sponsors title -->
+
+      <!--#region Sponsors details -->
+      <div class="container">
+        <!-- DXC Technology -->
+        <div class="pt-4">
+          <h2>DXC Technology</h2>
+          <p>
+            DXC Technology is the world's leading independent, end-to-end IT
+            services company, helping customers harness the power of innovation
+            to thrive on change. We help our customers across the entire
+            enterprise technology stack with differentiated industry solutions.
+            We modernize IT, optimize data architectures, and make everything
+            secure, scalable and orchestrated across public, private and hybrid
+            clouds.
+          </p>
+          <p>
+            We combine years of experience running mission-critical systems with
+            the latest digital innovations to deliver better business outcomes
+            and new levels of performance, competitiveness and experiences for
+            our customers and their stakeholders.
+          </p>
+          <div class="pt-4 pb-4">
+            <a
+              class="btn btn-primary btn-lg"
+              href="https://www.dxc.technology/"
+              role="button"
+              target="_blank"
+              >Learn more »</a
+            >
+          </div>
+        </div>
+        <hr />
+        <!-- Leonardo -->
+        <div class="pt-4">
+          <h2>Leonardo</h2>
+          <p>
+            Leonardo is a global high-technology company, is among the top ten
+            world players in Aerospace, Defence and Security and Italy’s main
+            industrial company. Organized into five business divisions, Leonardo
+            has a significant industrial presence in Italy, the United Kingdom,
+            Poland and the USA, where it also operates through subsidiaries such
+            as Leonardo DRS (defence electronics), and joint ventures and
+            partnerships: ATR, MBDA, Telespazio, Thales Alenia Space and Avio.
+            Leonardo competes in the most important international markets by
+            leveraging its areas of technological and product leadership
+            (Helicopters, Aircraft, Aerostructures, Electronics, Cyber Security
+            and Space).
+          </p>
+          <div class="pt-4">
+            <a
+              class="btn btn-primary btn-lg"
+              href="https://www.leonardocompany.com/"
+              role="button"
+              target="_blank"
+              >Learn more »</a
+            >
+          </div>
+        </div>
+      </div>
+      <!--#endregion /Sponsors details -->
+
+      <!--#region Footer -->
+      <footer class="container">
+        <div class="footer-space">
+          <p class="text-muted">&copy; 2020 Team Defence Information</p>
+        </div>
+      </footer>
+      <!--#endregion /Footer -->
     </main>
     <!--#endregion /Main content-->
 
     <!--#region Scripts -->
-    <!-- Font Awesome -->
+    <!-- Font Awesome.js-->
     <script
       src="https://kit.fontawesome.com/78b1d29e85.js"
       crossorigin="anonymous"
     ></script>
-    <!--#endregion /Scripts -->
+    <!-- Bootstrap.js -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <!--#endregion /Scripts-->
   </body>
 </html>
