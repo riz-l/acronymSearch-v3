@@ -6,7 +6,7 @@
 }
 /*#endregion /RESET (Do not touch) */
 
-/*#region Root variables */
+/*#region Root variables and colour classes */
 :root {
   font-size: 16px;
   font-family: "Poppins", sans-serif;
@@ -16,7 +16,33 @@
   --bg-secondary: #141418;
   --transition-speed: 600ms;
 }
-/*#endregion /Root variables */
+
+.text-primary {
+  color: #b6b6b6;
+}
+
+.text-secondary {
+  color: #ececec;
+}
+
+.bg-primary {
+  background-color: #23232e;
+}
+
+.bg-secondary {
+  background-color: #141418;
+}
+/*#endregion /Root variables and colour classes */
+
+/*#region Global classes */
+.text-center {
+  text-align: center;
+}
+
+.container {
+  padding: 4rem;
+}
+/*#endregion /Global classes */
 
 /*#region Body and Main styling */
 body {
@@ -47,6 +73,7 @@ main {
 .navbar {
   position: fixed;
   background-color: var(--bg-primary);
+  background-color: #23232e;
   transition: width 600ms ease;
   overflow: none;
   z-index: 9999;
@@ -71,6 +98,7 @@ main {
   align-items: center;
   height: 5rem;
   color: var(--text-primary);
+  color: #b6b6b6;
   text-decoration: none;
   filter: grayscale(100%) opacity(0.7);
   transition: var(--transition-speed);
@@ -79,7 +107,9 @@ main {
 .nav-link:hover {
   filter: grayscale(0%) opacity(1);
   background: var(--bg-secondary);
+  background: #141418;
   color: var(--text-secondary);
+  color: #ececec;
 }
 
 .link-text {
@@ -105,7 +135,9 @@ main {
   margin-bottom: 1rem;
   text-align: center;
   color: var(--text-secondary);
+  color: #ececec;
   background: var(--bg-secondary);
+  background: #141418;
   font-size: 1.5rem;
   letter-spacing: 0.3ch;
   width: 100%;
@@ -155,7 +187,7 @@ main {
 }
 
 /* Large screens */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 601px) {
   .navbar {
     top: 0;
     width: 5rem;
@@ -192,9 +224,9 @@ main {
     "search"
     "search-results"
     "footer";
-  /* 4 rows that take up: 30%, 20%, 40% and 10% */
-  grid-template-rows: repeat(4, 30% 20% 40% 10%);
-  /* First column is 240px wide, both middle columns automatically fit the view port, and the last column has a width of 240px */
+  /* 4 rows that take up: 30%, 10%, 50% and 10% */
+  grid-template-rows: 30vh 10vh auto 10vh;
+  /* One column that fills the viewport */
   grid-template-columns: auto;
   --stagger-delay: 100ms;
 }
@@ -223,6 +255,7 @@ main {
   align-items: center;
 
   /* Grid-area details */
+  background: white;
   color: black;
   height: 100%;
   width: 100%;
@@ -243,6 +276,7 @@ main {
   grid-area: search;
   animation-delay: calc(2 * var(--stagger-delay));
 }
+
 .grid-area:nth-child(3) {
   grid-area: search-results;
   animation-delay: calc(3 * var(--stagger-delay));
@@ -251,25 +285,114 @@ main {
 /* On small screens footer is hidden */
 @media only screen and (max-width: 600px) {
   .grid-area:last-child {
-    display: none;
     grid-area: footer;
     animation-delay: calc(4 * var(--stagger-delay));
   }
 }
 /*#endregion /Main content Grid */
 
-/*#region Main content */
-.title {
+/*#region Title */
+.main-title {
+  font-size: 4vw;
 }
 
-.search {
+.main-lead {
+  font-size: 1.5vw;
 }
 
-.search-results {
+@media only screen and (max-width: 866px) {
+  .main-title {
+    font-size: 5vw;
+  }
+
+  .main-lead {
+    font-size: 2vw;
+  }
 }
 
+@media only screen and (max-width: 600px) {
+  .main-title {
+    font-size: 7vw;
+  }
+
+  .main-lead {
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (max-width: 383px) {
+  .main-title {
+    font-size: 7vw;
+  }
+
+  .main-lead {
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (max-width: 318px) {
+  .main-title {
+    font-size: 6vw;
+  }
+
+  .main-lead {
+    font-size: 3.5vw;
+  }
+}
+/*#endregion /Title */
+
+/*#region Search Results */
+.card-container {
+  display: flex;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  transition: 300ms ease-in;
+  border-radius: 8px;
+  width: 400px;
+}
+
+.card-container:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+}
+
+.column {
+  flex-direction: column;
+  flex: 1;
+}
+
+.column div {
+  padding: 0.5rem;
+}
+
+.card-image {
+  flex: 0.5;
+}
+
+.card-image img {
+  display: block;
+  height: 60px;
+  margin: 1rem;
+}
+
+.card-acronym {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.card-definition {
+  font-size: 1.2rem;
+}
+/*#endregion /Search Results */
+
+/*#region Footer */
 .footer {
-  background-color: black;
-  color: white;
+  background: var(--bg-secondary);
+  background: #141418;
+  color: var(--text-secondary);
+  color: #ececec;
 }
-/*#endregion /Main content */
+/*#endregion /Footer */
