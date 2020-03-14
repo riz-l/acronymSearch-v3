@@ -4,8 +4,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Internet Explorer functionality -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <!-- Styles.css -->
     <link rel="stylesheet" href="../assets/css/styles.css" />
+
     <!-- Bootstrap.css -->
     <link
       rel="stylesheet"
@@ -13,14 +18,41 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="../assets/img/icons/tdi.ico"
+    />
+
     <!-- Poppins (Google Fonts) -->
     <link
       href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Manifest.json -->
+    <link rel="manifest" href="../manifest.json" />
+
+    <!-- Address Bar Theme Colour -->
+    <meta name="theme-color" content="#23222f" />
+
+    <!-- iOS Support -->
+    <link rel="apple-touch-icon" href="../assets/img/icons/tdi-72x72.png" />
+    <link rel="apple-touch-icon" href="../assets/img/icons/tdi-96x96.png" />
+    <link rel="apple-touch-icon" href="../assets/img/icons/tdi-128x128.png" />
+    <link rel="apple-touch-icon" href="../assets/img/icons/tdi-144x144.png" />
+    <link rel="apple-touch-icon" href="../assets/img/icons/tdi-152x152.png" />
+    <link rel="apple-touch-icon" href="../assets/img/icons/tdi-192x192.png" />
+    <link rel="apple-touch-icon" href="../assets/img/icons/tdi-384x384.png" />
+    <link rel="apple-touch-icon" href="../assets/img/icons/tdi-512x512.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#23222f" />
+
     <title>Contact - Acronym Search</title>
   </head>
   <!--#endregion /Head -->
+
   <body>
     <!--#region Navigation bar-->
     <nav class="navbar-tdi">
@@ -84,7 +116,7 @@
       <div class="container">
         <div class="pt-4">
           <h2>Get In Touch</h2>
-          <p>
+          <p class="pt-2">
             If you would like to find out more about Team Defence Information or
             the Joint Information Group - Vanguard, or would like to get in
             touch, please contact us using of the methods below:
@@ -111,7 +143,7 @@
       <!--#endregion /Contact details -->
 
       <!--#region Footer -->
-      <footer class="container">
+      <footer class="container container-footer">
         <div class="footer-space">
           <p class="text-muted">&copy; 2020 Team Defence Information</p>
         </div>
@@ -121,22 +153,36 @@
     <!--#endregion /Main content-->
 
     <!--#region Scripts -->
+    <!-- DB.js -->
+    <script src="../assets/js/db.js"></script>
+
+    <!-- App.js -->
+    <script src="../assets/js/app.js"></script>
+
+    <!-- UI.js -->
+    <script src="../assets/js/ui.js"></script>
+
     <!-- Font Awesome.js-->
     <script
       src="https://kit.fontawesome.com/78b1d29e85.js"
       crossorigin="anonymous"
     ></script>
-    <!-- Bootstrap.js -->
+
+    <!-- jQuery.js -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Popper.js -->
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Bootstrap.js -->
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
