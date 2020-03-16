@@ -314,10 +314,14 @@ main {
 
 /*#region Ji's code */
 .container-footer {
-  padding-bottom: 3rem;
+  background-color: #242330;
 }
+
 .footer-space {
-  padding-bottom: 5rem;
-  padding-top: 3rem;
+  padding: 3rem 0rem;
+}
+
+.divider {
+  margin: 8rem 0rem;
 }
 /*#endregion /Ji's code */
