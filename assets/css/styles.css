@@ -114,6 +114,11 @@ main {
   transition: var(--transition-speed);
 }
 
+.nav-link-tdi-active {
+  border-right: 4px solid #7e3f8f;
+  filter: none;
+}
+
 .nav-link-tdi:hover {
   -webkit-filter: grayscale(0%) opacity(1);
   filter: grayscale(0%) opacity(1);
