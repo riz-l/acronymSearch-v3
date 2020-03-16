@@ -219,6 +219,10 @@ main {
   main {
     margin: 0;
   }
+
+  .nav-spacing {
+    margin-bottom: 5rem;
+  }
 }
 
 /* Large screens */
@@ -323,5 +327,9 @@ main {
 
 .divider {
   margin: 8rem 0rem;
+}
+
+.nav-spacing {
+  padding-bottom: 0rem;
 }
 /*#endregion /Ji's code */
