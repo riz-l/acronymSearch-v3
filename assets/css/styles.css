@@ -9,12 +9,13 @@
 /*#region Root variables and animations */
 :root {
   font-size: 16px;
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Poppins", sans-serif;
   --text-primary: #b6b6b6;
   --text-secondary: #ececec;
   --bg-primary: #2a2939;
   --bg-secondary: #242330;
   --transition-speed: 600ms;
+  --transition-speed-2: 800ms;
   --stagger-delay: 100ms;
 }
 
@@ -38,15 +39,14 @@ body {
   background-color: white;
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif !important;
 }
 
 body::-webkit-scrollbar {
-  width: 0.25rem;
+  width: 0.5rem;
 }
 
 body::-webkit-scrollbar-track {
-  background: #1e1e24;
+  background: #2a2939;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -58,15 +58,12 @@ main {
   animation: areaEntrance 700ms ease-out;
   animation-fill-mode: backwards;
 }
-
-p {
-  line-height: 2;
-}
 /*#endregion /Body and Main styling */
 
 /*#region Global classes */
-.sub-text {
-  font-size: 1.4rem;
+.container {
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
 }
 /*#endregion /Global classes */
 
@@ -268,8 +265,59 @@ p {
 }
 /*#endregion /Main structure */
 
+/*#region Home */
+.tdi-card-img {
+  width: 60px !important;
+}
+/*#endregion /Home */
+
 /*#region Contact */
 .contact-list {
   list-style: none;
 }
 /*#endregion /Contact */
+
+/*#region Sponsors */
+.button-tdi {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  padding: 0.75rem 1rem;
+  transition: 200ms ease-in;
+}
+
+.button-tdi:hover,
+.button-tdi a:hover {
+  background-color: var(--bg-primary);
+  background-color: #2a2939;
+  border: 1px solid #2a2939;
+  color: white;
+  text-decoration: none !important;
+}
+
+.sponsor-img-container {
+  padding: 4rem 2rem;
+}
+
+.sponsor-img {
+  width: 70%;
+}
+/*#endregion /Sponsors */
+
+/*#region Fallback */
+.fallback-content i {
+  color: orange;
+  font-size: 16vw;
+  z-index: 9999;
+}
+/*#endregion /Fallback */
+
+/*#region Ji's code */
+.container-footer {
+  padding-bottom: 3rem;
+}
+.footer-space {
+  padding-bottom: 5rem;
+  padding-top: 3rem;
+}
+/*#endregion /Ji's code */
