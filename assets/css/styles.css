@@ -50,7 +50,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #6649b8;
+  background: #7e3f8f;
 }
 
 main {
@@ -227,6 +227,12 @@ main {
 
   .nav-spacing {
     margin-bottom: 5rem;
+  }
+
+  .nav-link-tdi-active {
+    border-top: 4px solid #7e3f8f;
+    border-right: none;
+    filter: none;
   }
 }
 

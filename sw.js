@@ -1,5 +1,5 @@
-const staticCacheName = "site-static-v6.1";
-const dynamicCacheName = "site-dynamic-v6.1";
+const staticCacheName = "site-static-v6.5";
+const dynamicCacheName = "site-dynamic-v6.5";
 const assets = [
   "/",
   "/index.html",
@@ -55,27 +55,30 @@ self.addEventListener("activate", evt => {
 
 // Fetch event
 self.addEventListener("fetch", evt => {
-  // if (evt.request.url.indexOf("firestore.googleapis.com") === -1) {
-  //   evt.respondWith(
-  //     caches
-  //       .match(evt.request)
-  //       .then(cacheRes => {
-  //         return (
-  //           cacheRes ||
-  //           fetch(evt.request).then(fetchRes => {
-  //             return caches.open(dynamicCacheName).then(cache => {
-  //               cache.put(evt.request.url, fetchRes.clone());
-  //               limitCacheSize(dynamicCacheName, 15);
-  //               return fetchRes;
-  //             });
-  //           })
-  //         );
-  //       })
-  //       .catch(() => {
-  //         if (evt.request.url.indexOf(".html") > -1) {
-  //           return caches.match("/pages/fallback.html");
-  //         }
-  //       })
-  //   );
-  // }
+  // Any part of the URL with 'firestore.googleapis.com' is making a request to the firestore database
+  // This then stops caching responses from the URL
+  if (evt.request.url.indexOf("firestore.googleapis.com") === -1) {
+    // If 'firestore.googleapis.com' is equal to -1, run the below code and cache the response
+    evt.respondWith(
+      caches
+        .match(evt.request)
+        .then(cacheRes => {
+          return (
+            cacheRes ||
+            fetch(evt.request).then(fetchRes => {
+              return caches.open(dynamicCacheName).then(cache => {
+                cache.put(evt.request.url, fetchRes.clone());
+                limitCacheSize(dynamicCacheName, 15);
+                return fetchRes;
+              });
+            })
+          );
+        })
+        .catch(() => {
+          if (evt.request.url.indexOf(".html") > -1) {
+            return caches.match("/pages/fallback.html");
+          }
+        })
+    );
+  }
 });
