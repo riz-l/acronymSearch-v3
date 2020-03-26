@@ -4,8 +4,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Internet Explorer functionality -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <!-- Styles.css -->
     <link rel="stylesheet" href="assets/css/styles.css" />
+
     <!-- Bootstrap.css -->
     <link
       rel="stylesheet"
@@ -13,14 +18,41 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="assets/img/icons/tdi.ico"
+    />
+
     <!-- Poppins (Google Fonts) -->
     <link
       href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Manifest.json -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Address Bar Theme Colour -->
+    <meta name="theme-color" content="#23222f" />
+
+    <!-- iOS Support -->
+    <link rel="apple-touch-icon" href="assets/img/icons/tdi-72x72.png" />
+    <link rel="apple-touch-icon" href="assets/img/icons/tdi-96x96.png" />
+    <link rel="apple-touch-icon" href="assets/img/icons/tdi-128x128.png" />
+    <link rel="apple-touch-icon" href="assets/img/icons/tdi-144x144.png" />
+    <link rel="apple-touch-icon" href="assets/img/icons/tdi-152x152.png" />
+    <link rel="apple-touch-icon" href="assets/img/icons/tdi-192x192.png" />
+    <link rel="apple-touch-icon" href="assets/img/icons/tdi-384x384.png" />
+    <link rel="apple-touch-icon" href="assets/img/icons/tdi-512x512.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#23222f" />
+
     <title>Acronym Search</title>
   </head>
   <!--#endregion /Head -->
+
   <body>
     <!--#region Navigation bar-->
     <nav class="navbar-tdi">
@@ -29,34 +61,34 @@
         <li class="logo-tdi">
           <a href="index.html" class="nav-link-tdi">
             <span class="link-text-tdi logo-text-tdi">TDI</span>
-            <i class="fas fa-angle-double-right"></i>
+            <i class="fas fa-angle-double-right pl-1"></i>
           </a>
         </li>
         <!-- Home -->
         <li class="nav-item-tdi">
-          <a href="index.html" class="nav-link-tdi">
-            <i class="fas fa-home"></i>
+          <a href="index.html" class="nav-link-tdi nav-link-tdi-active">
+            <i class="fas fa-home pl-1 nav-img"></i>
             <span class="link-text-tdi">Home</span>
           </a>
         </li>
         <!-- About -->
         <li class="nav-item-tdi">
           <a href="pages/about.html" class="nav-link-tdi">
-            <i class="fas fa-info-circle"></i>
+            <i class="fas fa-info-circle pl-1 nav-img"></i>
             <span class="link-text-tdi">About</span>
           </a>
         </li>
         <!-- Contact -->
         <li class="nav-item-tdi">
           <a href="pages/contact.html" class="nav-link-tdi">
-            <i class="fas fa-envelope"></i>
+            <i class="fas fa-envelope pl-1 nav-img"></i>
             <span class="link-text-tdi">Contact</span>
           </a>
         </li>
         <!-- Sponsors -->
         <li class="nav-item-tdi">
           <a href="pages/sponsors.html" class="nav-link-tdi">
-            <i class="fas fa-asterisk"></i>
+            <i class="fas fa-asterisk pl-1 nav-img"></i>
             <span class="link-text-tdi">Sponsors</span>
           </a>
         </li>
@@ -65,12 +97,12 @@
     <!--#endregion /Navigation bar-->
 
     <!--#region Main content -->
-    <main>
+    <main class="background-main">
       <!--#region Title -->
       <div class="jumbotron">
         <div class="container">
           <div class="title-space">
-            <h1 class="display-3">Acronym Search</h1>
+            <h1 class="display-3 main-title">Acronym Search</h1>
             <p>
               Please use the searchbar below to look for acronyms and
               definitions commonly used throughout the Defence industry
@@ -83,44 +115,112 @@
       <!--#region Search Bar -->
       <div class="container">
         <div class="searchbar-space pt-4">
-          <input class="form-control" id="acronymSearchTable" type="text" />
+          <input
+            class="form-control searchbar"
+            id="acronymSearchTable"
+            type="text"
+            placeholder="Search ... e.g. MOD"
+          />
         </div>
       </div>
       <!--#endregion /Search Bar-->
 
       <!--#region Search Results -->
       <div class="container">
-        <div class="searchresults-space"></div>
+        <div class="searchresults-space pt-4">
+          <div class="acronyms-and-definitions"></div>
+          <!--#region Template Results Card -->
+          <div class="card flex-row flex-wrap my-3 shadow-sm card-style">
+            <div class="my-auto px-4">
+              <!-- <img
+                class="tdi-card-img"
+                src="assets/img/tdi-logo.png"
+                alt="Team Defence Information Logo"
+              /> -->
+              <div class="search-div">
+                <i class="fas fa-align-left"></i>
+              </div>
+
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">MOD</h5>
+              <p class="card-text">Ministry of Defence</p>
+            </div>
+          </div>
+          <!--#endregion /Template Results Card -->
+        </div>
       </div>
       <!--#endregion /Search Results-->
 
+      <!-- Divider -->
+      <div class="divider"></div>
+
       <!--#region Footer -->
-      <footer class="container container-footer">
+      <footer class="container-fluid container-footer text-center my-auto">
         <div class="footer-space">
-          <p class="text-muted">&copy; 2020 Team Defence Information</p>
+          <p class="text-muted">UKCeB trading as Team Defence Information</p>
+          <p class="text-muted">&copy; 2006 - 2020 UKCeB &amp; SWD</p>
         </div>
+        <div class="nav-spacing"></div>
       </footer>
       <!--#endregion /Footer -->
     </main>
     <!--#endregion /Main content-->
 
     <!--#region Scripts -->
+    <!--#region Firebase -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBvUsTnsFo1lbcjVJENrlEPr09j9wyWd7o",
+        authDomain: "acronymsearch-1532c.firebaseapp.com",
+        databaseURL: "https://acronymsearch-1532c.firebaseio.com",
+        projectId: "acronymsearch-1532c",
+        storageBucket: "acronymsearch-1532c.appspot.com",
+        messagingSenderId: "87960695316",
+        appId: "1:87960695316:web:5d5ef1b0eb9904d2e02d01"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      // Constant 'db' is used to connect Acronym Search to Firestore database
+      const db = firebase.firestore();
+    </script>
+    <!--#endregion /Firebase-->
+
+    <!-- DB.js -->
+    <script src="assets/js/db.js"></script>
+
+    <!-- App.js -->
+    <script src="assets/js/app.js"></script>
+
+    <!-- UI.js -->
+    <script src="assets/js/ui.js"></script>
+
     <!-- Font Awesome.js-->
     <script
       src="https://kit.fontawesome.com/78b1d29e85.js"
       crossorigin="anonymous"
     ></script>
-    <!-- Bootstrap.js -->
+
+    <!-- jQuery.js -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Popper.js -->
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Bootstrap.js -->
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"

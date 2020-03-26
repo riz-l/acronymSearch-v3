@@ -15,6 +15,7 @@
   --bg-primary: #2a2939;
   --bg-secondary: #242330;
   --transition-speed: 600ms;
+  --transition-speed-2: 800ms;
   --stagger-delay: 100ms;
 }
 
@@ -41,11 +42,11 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 0.25rem;
+  width: 0.5rem;
 }
 
 body::-webkit-scrollbar-track {
-  background: #1e1e24;
+  background: #2a2939;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -58,6 +59,13 @@ main {
   animation-fill-mode: backwards;
 }
 /*#endregion /Body and Main styling */
+
+/*#region Global classes */
+.container {
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+/*#endregion /Global classes */
 
 /*#region Navigation styling */
 .navbar-tdi {
@@ -104,6 +112,11 @@ main {
   -ms-transition: var(--transition-speed);
   -o-transition: var(--transition-speed);
   transition: var(--transition-speed);
+}
+
+.nav-link-tdi-active {
+  border-right: 4px solid #937dbd;
+  filter: none;
 }
 
 .nav-link-tdi:hover {
@@ -211,6 +224,10 @@ main {
   main {
     margin: 0;
   }
+
+  .nav-spacing {
+    margin-bottom: 5rem;
+  }
 }
 
 /* Large screens */
@@ -257,18 +274,125 @@ main {
 }
 /*#endregion /Main structure */
 
+/*#region Home */
+.tdi-card-img {
+  width: 60px !important;
+}
+/*#endregion /Home */
+
 /*#region Contact */
 .contact-list {
   list-style: none;
 }
 /*#endregion /Contact */
 
+/*#region Sponsors */
+.button-tdi {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  padding: 0.75rem 1rem;
+  transition: 200ms ease-in;
+}
 
-/* Ji's code */
+.button-tdi:hover,
+.button-tdi a:hover {
+  background-color: var(--bg-primary);
+  background-color: #2a2939;
+  border: 1px solid #2a2939;
+  color: white;
+  text-decoration: none !important;
+}
+
+.sponsor-img-container {
+  padding: 4rem 2rem;
+}
+
+.sponsor-img {
+  width: 70%;
+}
+/*#endregion /Sponsors */
+
+/*#region Fallback */
+.fallback-content i {
+  color: orange;
+  font-size: 16vw;
+  z-index: 9999;
+}
+/*#endregion /Fallback */
+
+/*#region Ji's code */
+.card-style {
+  border-radius: 25px !important;
+}
 .container-footer {
-  padding-bottom: 3rem;
+  background-color: #242330;
+}
+.fa-align-left {
+  color: #937dbd;
+  font-weight: 700;
+  font-size: 2rem;
 }
 .footer-space {
-  padding-bottom: 5rem;
-  padding-top: 3rem;
+  padding: 3rem 0rem;
 }
+.divider {
+  margin: 8rem 0rem;
+}
+.jumbotron {
+  background-color: rgb(250,250,250) !important;
+}
+.logo-tdi {
+  background: rgb(194, 197, 237);
+  /* background: white; */
+}
+.logo-text-tdi {
+  color: #3c375c;
+}
+.main-title {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600 !important;
+  padding-bottom: 20px;
+}
+.nav-link-tdi {
+  color: #937dbd;
+  font-weight: 600;
+}
+.nav-img {
+  color: #6c757d !important;
+}
+.nav-spacing {
+  padding-bottom: 0rem;
+}
+
+.search-div {
+  padding: 0 1rem;
+}
+.nav-link-tdi:hover {
+  background-color: rgb(225, 229, 241);
+
+}
+.container-footer {
+  background-color: #3c375c;
+}
+.display3 {
+  font-weight: 600;
+}
+.background-main {
+  background-color: rgb(247,247,247);
+}
+.logo-tdi i {
+  color: #937dbd;
+}
+.nav-link-tdi:hover {
+  color: #6c757d;
+}
+.searchbar {
+  border-color: white !important;
+  border-radius: 25px !important;
+}
+.fa-angle-double-right {
+  color: #3c375c !important;
+}
+
+/*#endregion /Ji's code */
